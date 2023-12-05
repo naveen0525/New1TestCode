@@ -6,7 +6,7 @@
 # separate terms of service, privacy policy, and support
 # documentation.
 
-name: Selenium with TestNG - CI
+name: Continuous integration testing on git and deploying on github pages.
 
 on:
   push:
