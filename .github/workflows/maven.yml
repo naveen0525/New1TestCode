@@ -15,7 +15,7 @@ on:
     branches: [ "master" ]
 
 jobs:
-  build:
+  build and compile:
   
     runs-on: ubuntu-latest
 
@@ -34,9 +34,10 @@ jobs:
     - name: Build with Maven
       run: mvn -B clean test
 
+  deploy:
+    - needs: build and compile
     - name: Deploy report to GitHub page
       uses: peaceiris/actions-gh-pages@v3
-      needs: Build with Maven
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./src/reports
