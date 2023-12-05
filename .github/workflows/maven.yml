@@ -15,7 +15,7 @@ on:
     branches: [ "master" ]
 
 jobs:
-  build and compile:
+  build_and_compile:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
@@ -33,9 +33,12 @@ jobs:
       run: mvn -B clean test
 
   deploy:
-    - needs: build and compile
+    runs-on: ubuntu-latest
+    needs: build_and_compile
+    steps:
+    - uses: peaceiris/actions-gh-pages@v3
     - name: Deploy report to GitHub page
-      uses: peaceiris/actions-gh-pages@v3
+      
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./src/reports
