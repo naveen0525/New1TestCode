@@ -32,10 +32,6 @@ jobs:
     - name: Build with Maven
       run: mvn -B clean test
 
-  deploy:
-    runs-on: ubuntu-latest
-    needs: build_and_compile
-    steps:
     - uses: peaceiris/actions-gh-pages@v3
     - name: Deploy report to GitHub page
       
