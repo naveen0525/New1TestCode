@@ -35,8 +35,8 @@ jobs:
       run: mvn -B clean test
 
     - name: Deploy report to GitHub page
-      needs: Build with Maven
       uses: peaceiris/actions-gh-pages@v3
+      needs: Build with Maven
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./src/reports
