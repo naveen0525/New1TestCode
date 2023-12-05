@@ -71,7 +71,7 @@
                 <version>3.2.2</version>
                 <configuration>
                     <parallel>classes</parallel>
-                    <skipTests>true</skipTests>
+                    
                 </configuration>
             </plugin>
         </plugins>
